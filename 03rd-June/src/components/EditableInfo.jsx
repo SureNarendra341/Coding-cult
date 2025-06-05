@@ -69,7 +69,7 @@ const EditableInfo = () => {
 
   // Fetch from backend on load
   useEffect(() => {
-    axios.get('http://localhost:8080/contact')
+    axios.get('http://localhost:8080/api/contact')
       .then((res) => {
         setInfo(res.data);
         setTempInfo(res.data);
@@ -85,7 +85,7 @@ const EditableInfo = () => {
     setInfo(tempInfo);
     setEditing(false);
     // Optional: send updated data to backend
-    axios.post('http://localhost:8080/contact', tempInfo)
+    axios.post('http://localhost:8080/api/contact', tempInfo)
       .then(() => console.log('Saved!'))
       .catch((err) => console.error('Save failed', err));
   };

@@ -38,7 +38,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/contact', formData);
+      await axios.post('http://localhost:8080/api/contact', formData);
       alert('Message sent successfully!');
       setFormData({ name: '', phone: '', email: '', message: '' });
     } catch (err) {
